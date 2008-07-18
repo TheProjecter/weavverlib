@@ -90,7 +90,10 @@ namespace WeavverLib.Installer
           {
                if (File.Exists(destination))
                {
-                    File.Move(destination, "temppatH");
+                    Random r = new Random();
+                    string destinationtemp = Path.GetDirectoryName(destination) +  r.Next(9) + r.Next(9) + r.Next(9) + r.Next(9) + r.Next(9) + ".temp"; 
+                    File.Move(destination, destinationtemp);
+                    FileDeleteSafe(destinationtemp);
                }
                File.Copy(source, destination);
           }
@@ -114,6 +117,8 @@ namespace WeavverLib.Installer
 //-------------------------------------------------------------------------------------------
           public void CreateRunOnceKey(string command)
           {
+               RegistryKey k = Registry.LocalMachine.OpenSubKey(@"Software\Microsoft\Windows\CurrentVersion\RunOnce", true);
+               k.SetValue("Run Once Command", command);
           }
 //-------------------------------------------------------------------------------------------
           public virtual void Install()
