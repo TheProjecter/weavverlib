@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>8.0.50727</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{4D558303-3DB5-4004-91BA-9DB658199B7B}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -29,6 +29,8 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>WeavverLib.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -48,6 +50,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Coversant.SoapBox, Version=3.3.0.284, Culture=neutral, PublicKeyToken=a7151caca23ccf7f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\oDesk Repo\Projects\SoapBox\Drupal SSO\bin\Debug\Coversant.SoapBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Coversant.SoapBox.Server.ServerCore, Version=3.3.0.267, Culture=neutral, PublicKeyToken=a7151caca23ccf7f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\oDesk Repo\Projects\SoapBox\Drupal SSO\bin\Debug\Coversant.SoapBox.Server.ServerCore.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=5.2.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
@@ -55,7 +68,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Application Framework\WeavverApplication.cs" />
+    <Compile Include="Data\MySqlDatabase.cs" />
     <Compile Include="Installer\InstallerBase.cs" />
+    <Compile Include="SoapBox\DatabaseUserManager.cs" />
+    <Compile Include="SoapBox\DatabaseUserManagerConfig.cs" />
     <Compile Include="Sockets\AsteriskClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -75,6 +91,9 @@
       <ProductName>.NET Framework 3.5</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="WeavverLib.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
