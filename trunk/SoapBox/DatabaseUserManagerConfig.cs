@@ -8,10 +8,11 @@ namespace WeavverLib.SoapBox
      public sealed class DatabaseUserManagerConfig : UserManagerConfig
      {
          private const string ASSEMBLY_NAME = "Weavver.DrupalUserManager.dll";
-         private string dbtype = "mysql";
-         private string dbhost = "";
-         private string dbuser = "";
-         private string dbpass = "";
+         public string dbtype = "mysql";
+         public string dbname = "";
+         public string dbhost = "";
+         public string dbuser = "";
+         public string dbpass = "";
 //--------------------------------------------------------------------------------------------
          public DatabaseUserManagerConfig() : base(ASSEMBLY_NAME, typeof(DatabaseUserManagerConfig).FullName)
          {
@@ -24,19 +25,20 @@ namespace WeavverLib.SoapBox
           public override void GetProperties(System.Xml.XmlElement xml)
           {
                base.GetProperties(xml);
-               xml.SetAttribute("dbtype", dbtype);
-               xml.SetAttribute("dbhost", dbhost);
-               xml.SetAttribute("dbuser", dbuser);
-               xml.SetAttribute("dbpass", dbpass);
+               //xml.SetAttribute("dbtype", dbtype);
+               //xml.SetAttribute("dbhost", dbhost);
+               //xml.SetAttribute("dbuser", dbuser);
+               //xml.SetAttribute("dbpass", dbpass);
           }
 //--------------------------------------------------------------------------------------------
           public override void SetProperties(System.Xml.XmlElement xml)
           {
                base.SetProperties(xml);
-               dbhost = xml.GetAttribute("dbtype");
-               dbhost = xml.GetAttribute("dbhost");
-               dbuser = xml.GetAttribute("dbuser");
-               dbpass = xml.GetAttribute("dbpass");
+               dbtype = xml["type"].InnerText;
+               dbhost = xml["host"].InnerText;
+               dbname = xml["database"].InnerText;
+               dbuser = xml["user"].InnerText;
+               dbpass = xml["pass"].InnerText;
           }
 //--------------------------------------------------------------------------------------------
          protected override UserManager CreateConcreateUserManagerInstance()

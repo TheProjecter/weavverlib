@@ -78,6 +78,11 @@ namespace WeavverLib.SoapBox
         /// </param>
         public DatabaseUserManager(DatabaseUserManagerConfig config) : base("Database User Manager", config)
         {
+             Drupal.ConnectionString = "" +
+                  "Data Source=" + config.dbhost + ";" +
+                  "Database="    + config.dbname + ";" +
+                  "User ID="     + config.dbuser + ";" +
+                  "Password="    + config.dbpass + ";";
         }
 //--------------------------------------------------------------------------------------------
         /// <summary>

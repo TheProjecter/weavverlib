@@ -61,9 +61,15 @@ namespace WeavverLib.Data
                }
                finally
                {
-                    dbconnection = new MySqlConnection(ConnectionString);
+                    dbconnection              = new MySqlConnection(ConnectionString);
+                    dbconnection.StateChange += new System.Data.StateChangeEventHandler(dbconnection_StateChange);
                     dbconnection.Open();
                }
+          }
+//--------------------------------------------------------------------------------------------
+          void dbconnection_StateChange(object sender, System.Data.StateChangeEventArgs e)
+          {
+               
           }
 //--------------------------------------------------------------------------------------------
           public bool CheckUser(string jid, string password, out string[] roles)
@@ -89,6 +95,7 @@ namespace WeavverLib.Data
                     }
                     reader.Close();
                     roles = UserRoles.ToArray();
+                    throw new Exception("BLAH! " );
                     return authenticated;
                }
           }
