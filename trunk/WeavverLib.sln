@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeavverLib", "WeavverLib.csproj", "{4D558303-3DB5-4004-91BA-9DB658199B7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeavverLib Harness", "..\WeavverLib Harness\WeavverLib Harness.csproj", "{1F5B4778-F198-4AD5-A688-B1D89DCFB22A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D558303-3DB5-4004-91BA-9DB658199B7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D558303-3DB5-4004-91BA-9DB658199B7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D558303-3DB5-4004-91BA-9DB658199B7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D558303-3DB5-4004-91BA-9DB658199B7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F5B4778-F198-4AD5-A688-B1D89DCFB22A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F5B4778-F198-4AD5-A688-B1D89DCFB22A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F5B4778-F198-4AD5-A688-B1D89DCFB22A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F5B4778-F198-4AD5-A688-B1D89DCFB22A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
