@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.50727</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{4D558303-3DB5-4004-91BA-9DB658199B7B}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -52,15 +52,13 @@
   <ItemGroup>
     <Reference Include="Coversant.SoapBox, Version=3.3.0.284, Culture=neutral, PublicKeyToken=a7151caca23ccf7f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\oDesk Repo\Projects\SoapBox\Drupal SSO\bin\Debug\Coversant.SoapBox.dll</HintPath>
+      <HintPath>bin\Debug\Coversant.SoapBox.dll</HintPath>
     </Reference>
     <Reference Include="Coversant.SoapBox.Server.ServerCore, Version=3.3.0.267, Culture=neutral, PublicKeyToken=a7151caca23ccf7f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\oDesk Repo\Projects\SoapBox\Drupal SSO\bin\Debug\Coversant.SoapBox.Server.ServerCore.dll</HintPath>
+      <HintPath>bin\Debug\Coversant.SoapBox.Server.ServerCore.dll</HintPath>
     </Reference>
-    <Reference Include="MySql.Data, Version=5.2.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <Private>True</Private>
-    </Reference>
+    <Reference Include="MySql.Data, Version=5.2.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
