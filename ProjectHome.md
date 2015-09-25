@@ -1,0 +1,1 @@
+This library is released under a dual license model. GPL is available for open source developers and a seperate commercial license may be purchased directly from the Weavver sales team.
